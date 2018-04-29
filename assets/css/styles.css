@@ -14,3 +14,11 @@ body {
   cursor:pointer;
 }
 
+.hide {
+  display: none;
+}
+
+.player_heart {
+  margin-right: 5px;
+}
+

@@ -23,28 +23,28 @@
         <div class="container">
             <div class="row" style="margin-top:90px;">
                 <div class="col-6" style="font-family:Audiowide, cursive;color:rgb(37,56,75);">
-                    <h3>Player 1:&nbsp;<button class="btn btn-dark" type="button" style="height:33px;" data-toggle="modal" data-target="#user_name_modal">Choose Name</button></h3>
-                    <h3>Player 2:&nbsp;<span id="p2UserName">Searching...</span></h3>
+                    <h3 id="player_one_heading">Player 1:&nbsp;<button class="btn btn-dark" id="start_game" type="button" style="height:33px;" data-toggle="modal" data-target="#user_name_modal">Choose Name</button></h3>
+                    <h3>Player 2:&nbsp;<span id="enemy_player_username">Searching...</span></h3>
                 </div>
                 <div class="col-6">
                     <div class="row" style="height:40px;color:rgb(255,0,0);">
-                        <div class="col-3" style="font-size:24px;"><i class="fa fa-heart" style="margin-right:5px;"></i><i class="fa fa-heart" style="margin-right:5px;"></i><i class="fa fa-heart"></i></div>
+                        <div class="col-3" id="local_player_hearts" style="font-size:24px;"><i class="fa fa-heart player_heart"></i><i class="fa fa-heart" style="margin-right:5px;"></i><i class="fa fa-heart"></i></div>
                         <div class="col">
-                            <p style="color:rgb(0,0,0);font-size:21px;">Has Chosen:<i class="icon-check" style="margin-left:8px;padding-left:6px;color:rgb(51,255,0);"></i>&nbsp;</p>
+                            <p style="color:rgb(0,0,0);font-size:21px;">Has Chosen:<i class="icon-check hide" id="enemy_chosen_icon" style="margin-left:8px;padding-left:6px;color:rgb(51,255,0);"></i>&nbsp;</p>
                         </div>
                     </div>
-                    <div class="row" style="height:40px;">
-                        <div class="col-3" style="color:rgb(255,0,0);font-size:24px;"><i class="fa fa-heart" style="margin-right:5px;"></i><i class="fa fa-heart" style="margin-right:5px;"></i><i class="fa fa-heart"></i></div>
+                    <div class="row" style="height:40px;color:rgb(255,0,0);">
+                        <div class="col-3" id="enemy_player_hearts" style="font-size:24px;"><i class="fa fa-heart" style="margin-right:5px;"></i><i class="fa fa-heart" style="margin-right:5px;"></i><i class="fa fa-heart"></i></div>
                         <div class="col">
-                            <p style="font-size:21px;color:rgb(0,0,0);">Has Chosen:<i class="icon-check" style="margin-left:8px;padding-left:6px;color:rgb(51, 255, 0);"></i></p>
+                            <p style="font-size:21px;color:rgb(0,0,0);">Has Chosen:<i class="icon-check hide" id="local_chosen_icon" style="margin-left:8px;padding-left:6px;color:rgb(51, 255, 0);"></i></p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row" style="margin-top:58px;">
-                <div class="col-md-4" data-bs-hover-animate="jello" id="rock" style="background-image:url(&quot;assets/img/rock_icon.png&quot;);"></div>
-                <div class="col-md-4" data-bs-hover-animate="tada" id="paper" style="background-image:url(&quot;assets/img/paper_icon.png&quot;);"></div>
-                <div class="col-md-4" data-bs-hover-animate="rubberBand" id="scissors" style="background-image:url(&quot;assets/img/scissors_icon.png&quot;);"></div>
+                <div class="col-md-4 attack_method" data-bs-hover-animate="jello" id="rock" style="background-image:url(&quot;assets/img/rock_icon.png&quot;);"></div>
+                <div class="col-md-4 attack_method" data-bs-hover-animate="tada" id="paper" style="background-image:url(&quot;assets/img/paper_icon.png&quot;);"></div>
+                <div class="col-md-4 attack_method" data-bs-hover-animate="rubberBand" id="scissors" style="background-image:url(&quot;assets/img/scissors_icon.png&quot;);"></div>
             </div>
         </div>
     </div>
@@ -54,7 +54,7 @@
                 <div class="modal-header">
                     <h4 class="modal-title">Pick your user name!</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
                 <div class="modal-body"><input class="form-control-lg" type="text" name="selectUserName" required="" placeholder="e.g Paper-Boi" maxlength="25" autofocus="" id="user_name_input" style="width:247px;"></div>
-                <div class="modal-footer"><button class="btn btn-primary" type="button" id="pick_user_name">Pick Name</button></div>
+                <div class="modal-footer"><button class="btn btn-primary" type="button" id="pick_user_name" data-toggle="modal" data-target="#user_name_modal">Pick Name</button></div>
             </div>
         </div>
     </div>
@@ -62,6 +62,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-animation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script src="assets/js/rps.js"></script>
 </body>
 
