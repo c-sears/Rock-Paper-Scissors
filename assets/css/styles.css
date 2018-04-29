@@ -1,0 +1,16 @@
+body {
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  height:100vh;
+  width:100%;
+}
+
+#rock, #paper, #scissors {
+  background-size:contain;
+  background-position:center;
+  background-repeat:no-repeat;
+  height:300px;
+  cursor:pointer;
+}
+
